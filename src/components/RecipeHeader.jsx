@@ -5,7 +5,7 @@ import { BiCheese } from "react-icons/bi";
 import { BiCake } from "react-icons/bi";
 import { IoFishOutline } from "react-icons/io5";
 
-export default function RecipeHeader({ nutritionalFacts }) {
+export default function RecipeHeader({ nutritionalFacts, name }) {
   const nutritionalFactsArray = [
     {
       id: 1,
@@ -41,7 +41,7 @@ export default function RecipeHeader({ nutritionalFacts }) {
 
   return (
     <div className="recipe-header">
-      <h1>BOURAKE</h1>
+      <h1>{name}</h1>
       <div className="nutritional-facts-container">
         {nutritionalFactsArray.map(({ Icon, id, amount, category }) => (
           <RecipeNutritionalFact fact={{ amount, category }} key={id}>

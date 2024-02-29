@@ -1,4 +1,4 @@
-export default function RecipeInfo({ instructions }) {
+export default function RecipeInfo({ instructions, image }) {
   return (
     <div className="recipe-info">
       <div className="recipe-info-container">
@@ -8,9 +8,11 @@ export default function RecipeInfo({ instructions }) {
         {instructions.map(({ display_text, position }) => (
           <div className="recipe-info-content-container">
             <p className="recipe-step">{position}</p>
+            <p className="recipe-text">{display_text}</p>
           </div>
         ))}
       </div>
+      <img className="recipe-img" src={image} alt="" />
     </div>
   );
 }
