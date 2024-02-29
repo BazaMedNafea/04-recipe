@@ -1,10 +1,8 @@
-
-
 export default function AboutPage() {
-    return (
+  return (
     <>
-       <h1>ABOUT PAGE</h1>
-       <p>This app gives u recipes</p>
-       </>
-    );
+      <h1>ABOUT PAGE</h1>
+      <p>This app gives u recipes</p>
+    </>
+  );
 }

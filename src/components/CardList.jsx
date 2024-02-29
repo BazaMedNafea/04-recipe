@@ -1,4 +1,4 @@
-import Card from "./Card"
+import Card from "./Card";
 /*
 export const recipes = [
     {
@@ -31,13 +31,12 @@ export const recipes = [
     },
 ]
 */
-export default function CardList({recipes}) {
-    return (
-        <section className='cards'>
-        {recipes.map((recipe) => (
-        <Card key={recipe.id} recipe={recipe}/>
-        ))}
-       </section>
-    )
+export default function CardList({ recipes }) {
+  return (
+    <section className="cards">
+      {recipes.map((recipe) => (
+        <Card key={recipe.id} recipe={recipe} />
+      ))}
+    </section>
+  );
 }
-
