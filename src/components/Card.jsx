@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 export default function Card({recipe}){
-    const {image, name, tag, numberOFMinutes ,id} = recipe
+    const {thumbnail_url, name, topics, total_time_minutes,id} = recipe
 
     const navigate = useNavigate();
 
@@ -10,15 +10,15 @@ export default function Card({recipe}){
 
     return (
     <div className='card' onClick={navigateToRecipePage}>
-    <img src={image} 
+    <img src={thumbnail_url} 
     alt="" />
     <div className="card-content">
       <h3>{name}</h3>
       <div className="card-info">
       <div className="tag">
-        <p>{tag}</p>
+       {topics.length > 0 ? <p>{topics.name}</p> : null}
       </div>
-      <p className="time-text">{numberOFMinutes} mins</p>
+      {total_time_minutes ? <p className="time-text">{total_time_minutes} mins</p> : null}
     </div>
     </div>  
   </div>

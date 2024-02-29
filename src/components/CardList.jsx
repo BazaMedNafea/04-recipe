@@ -1,5 +1,5 @@
 import Card from "./Card"
-
+/*
 export const recipes = [
     {
         id:1,
@@ -30,8 +30,8 @@ export const recipes = [
         numberOFMinutes: 40
     },
 ]
-
-export default function CardList() {
+*/
+export default function CardList({recipes}) {
     return (
         <section className='cards'>
         {recipes.map((recipe) => (
