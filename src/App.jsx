@@ -1,12 +1,15 @@
 import './App.css'
-import Header from "./components/Header"
-import CardList from './components/CardList';
-import HomePage from './pages/HomePage';
-
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/NavBar';
 
 function App() {
   return (
-    <HomePage />
+    <div className='"App'>
+      <Navbar />
+      <main className="main_container">
+      <Outlet />
+      </main>  
+    </div>
   );
 }
 
