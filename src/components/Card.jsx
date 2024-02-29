@@ -16,7 +16,7 @@ export default function Card({recipe}){
       <h3>{name}</h3>
       <div className="card-info">
       <div className="tag">
-       {topics.length > 0 ? <p>{topics.name}</p> : null}
+       {topics.length > 0 ? <p>{topics[0].name}</p> : null}
       </div>
       {total_time_minutes ? <p className="time-text">{total_time_minutes} mins</p> : null}
     </div>

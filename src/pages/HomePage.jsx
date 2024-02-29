@@ -1,46 +1,29 @@
+import { useEffect } from "react";
 import CardList from "../components/CardList"
 import Header from "../components/Header"
-import axios from "axios"
-import { useEffect ,useState } from "react"; 
-
-const options = {
-  method: 'GET',
-  url: 'https://tasty.p.rapidapi.com/recipes/list',
-  params: {
-    from: '0',
-    size: '20',
- 
-  },
-  headers: {
-    'X-RapidAPI-Key': '91d02f8247mshd5ba1816714ff9ep131300jsn550f2f2c477a',
-    'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-  }
-};
-
-
+import Loading from "../components/Loading";
+import useFetchRecipes from "../hooks/useFetchRecipes";
 
 export default function HomePage() {
 
-    const [recipes, setRecipies] = useState([])
+    const [fetchRecipies, {data, loading ,error}] = useFetchRecipes();
 
     useEffect(() => {
         fetchRecipies();
     }, []);
-    
-    const fetchRecipies = async () => {
-        try {
-            const response = await axios.request(options);
-            setRecipies(response.data.results);
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    };
 
+    const handleSearch = (searchTerm) => {
+        if(searchTerm){
+          fetchRecipies(searchTerm);
+        }
+      }; 
+    
     return (
      <>
-        <Header />
-        <CardList recipes={recipes}/>
+        <Header handleSearch={handleSearch}/>
+        {loading  && <Loading />}
+        {data && <CardList recipes={data}/>}
+        {error && <p>{error}</p>}
         </>
     );
 }
