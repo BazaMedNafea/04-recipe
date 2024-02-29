@@ -12,11 +12,7 @@ function Header({ handleSearch }) {
         <h1 className="header-title">
           Look for <span>Banger</span> Food
         </h1>
-        <p className="header-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-          illo, consequuntur commodi ratione laboriosam mollitia provident
-          inventore hic aliquid optio.
-        </p>
+        <p className="header-description">Search for great recipes NOW!!!</p>
         <div className="header-input-container">
           <input
             type="text"
