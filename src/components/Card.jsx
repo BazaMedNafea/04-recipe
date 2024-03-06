@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
-
 export default function Card({ recipe }) {
   const { thumbnail_url, name, topics, total_time_minutes, id } = recipe;
 
   const navigate = useNavigate();
 
   const navigateToRecipePage = () => {
-    navigate(`/recipe/${id}/instructions`);
+    navigate(`/recipe/${id}`);
   };
 
   return (
